@@ -1,0 +1,13 @@
+Course Structure and Approach
+------------------------------
+JavaScript/TypeScript Focus
+The course emphasizes using JavaScript and TypeScript for Playwright automation tests, as these are the most widely used and supported within the Playwright community.
+
+Comprehensive Coverage
+The course provides a well-rounded understanding of Playwright, covering web/UI automation, web and API testing, and advanced framework features for building robust and maintainable test suites.
+
+Beginner-Friendly Approach
+It includes dedicated sections for those new to JavaScript or TypeScript, covering language basics so participants can follow along and build a solid foundation for Playwright automation.
+
+Practical and Hands-On
+The course offers practical exercises and real-world examples, helping learners develop the confidence and skills needed to use Playwright in their own projects.
