@@ -1,0 +1,29 @@
+What is Playwright and How it's differnt from other automation tool present in the market ?
+
+Why Use Playwright?
+--------------------
+Reliable End-to-End Testing
+Playwright's auto-wait capability ensures reliable and stable end-to-end testing for modern web applications, even when dealing with dynamic and complex user interactions.
+
+Cross-Browser Compatibility
+Playwright supports all major browsers, including Chromium-based (Chrome and Edge), Firefox, Safari (WebKit), and Opera. This allows testing web applications across a wide range of browsers and platforms.
+
+Multiplatform Support
+Playwright works seamlessly on Windows, macOS, and Linux. It also supports native mobile emulation for Chrome on Android and Safari on iOS, enabling comprehensive testing across different devices and operating systems.
+
+Multilingual Flexibility
+Playwright provides language bindings for JavaScript, TypeScript, Java, Python, and C# (.NET), letting you choose the programming language that best fits your team's preferences and expertise.
+
+Playwright's Advanced Features
+-------------------------------
+Tracing and Debugging
+Playwright includes built-in tracing and debugging, such as automatic screenshots, test video recording, and logging, which helps simplify identifying and resolving issues in tests.
+
+Network Interception
+Playwright’s API testing can intercept and validate network calls within web apps, enabling robust edge case testing and improving application resilience.
+
+Browser Context Management
+Playwright allows saving and transferring browser state across your test suite, making tests more efficient and reducing the overhead of resetting browser state for each test.
+
+Codegen Tool
+Playwright’s codegen tool can generate test code by recording your actions, saving time and effort for initial test creation and offering a starting point for customization.
