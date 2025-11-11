@@ -1,0 +1,14 @@
+in the terminal input
+npm install playwright
+
+then it asks bunch of questions
+after that skeleton of the playwright project is created
+
+.github
+nodu_modules - it contains playwright project jars, if we remove it project can't perform any activities
+tests - here we write the automation tests
+.gitignore
+package-lock.json
+package.json - while creating the framework this file will be useful
+playwright.config.js - it is a file where it's used for configuring the playwright project - an important file
+
