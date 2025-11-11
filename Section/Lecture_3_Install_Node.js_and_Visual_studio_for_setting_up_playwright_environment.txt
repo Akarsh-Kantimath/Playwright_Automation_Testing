@@ -1,0 +1,20 @@
+Playwright Installation & Setup
+
+What is Node.js?
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+
+Steps for Setup:
+Install Node.js
+Install Visual Studio Code (recommended for JavaScript/TypeScript development)
+Visit Playwright official website: https://playwright.dev/
+
+Set the environment variable by going to C drive program file, choose nodejs file
+copy the path
+now, in the search look for add environment variables
+click on add new variable
+variable name as: NODE_HOME
+variable path: C:\Program Files\nodejs
+click on save
+
+to check node installed version
+go to command prompt type node -v 
