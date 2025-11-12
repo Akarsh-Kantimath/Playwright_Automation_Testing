@@ -1,0 +1,38 @@
+To get the title of page and put the assertion
+-----------------------------------------------
+console.log(await page.title());
+
+Assertion of title - Page has a title
+--------------------------------------
+from playwright we should explicitely call for expect fixture of playwright.
+There are four fixtures of playwright.
+1. browser
+2. test
+3. expect
+way to import expect 
+const {test, expect} = require('@playwright/test');
+So far, we learnt three fixtures.
+
+await expect(page).toHaveTitle('Google');
+
+other browserName in configuration
+------------------------------------
+use: {
+	browserName : 'firefox' //Firefox browser
+
+},
+
+browserName : 'webkit' //for Safari browser
+
+=============================================================================
+to run the tests in headed mode, we were using terminal command as
+npx playwright test --headed
+instead of it, we can configure it in use section of playwright.config.js file
+-------------------------------------------------------------------------------
+
+use : {
+	browserName : 'webkit',
+	headless : false, //with this everttime we need not use --headed while running test, instead by 
+				npx playwright test triggers the test execution in headed mode
+
+},
