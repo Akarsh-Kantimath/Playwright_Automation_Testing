@@ -1,0 +1,45 @@
+playwright.config.js file
+------------------------------
+It's a heart of the entire the project.
+
+
+const config = ({     //all the value is stored under const config vatiable, below at the end we can export it.
+testDir: './tests',
+timeout: 40 * 1000, //It's for all the components wait period 40 seconds
+expect: {
+	timeout: 40 * 1000,
+	}, // this timeout is for assertions, by default 30 sec is already provided by the playwright when you want to overide only then we configure it
+
+reporter: 'html',
+
+
+use: {
+	browserName: 'chromium' //To run the test in chrome browser
+},
+
+});
+
+module.exports = config
+
+
+By default playwright runs the tests in headless mode, we must tell it explicitly to run in headed mode.
+How to run the tests in playwright?
+-----------------------------------
+If there are multiple .spec.js file, tests will run parallel
+If in one .spec.js file if there are multiple test annotation, they get executed in sequence.
+
+In terminal, use the command
+npx playwright test
+//npx - Node Package eXecutor - in the node_modules of project it looks for playwright jar
+//test refers to execution of tests
+//It runs in headless mode
+
+to run the tests in headed mode, we must mention it explicitly
+---------------------------------------------------------------
+npx playwright test --headed
+
+If there are multiple test annotation in one spec file and if you want to run only one test in that file then
+--------------------------------------------------------------------------------------------------------------
+test.only(' test name', async ()=>{ //.only is a helper attribute
+
+});
