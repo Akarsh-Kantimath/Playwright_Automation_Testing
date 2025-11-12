@@ -1,0 +1,40 @@
+fixture - in general terminology fixtures are Global variables which are available across the project
+--------
+fixed set of fixtures which are automatically availble for every test annotation, which are globally available.
+
+test('First Playwright test', async ({browser})=>
+{
+//we must write browser in curly braces to indentify it as a playwright fixture, if it's written without curly braces it will identified as a string value
+
+});
+
+what is context?
+----------------
+To create a fresh instance to open a browser context is used
+const context = browser.newContext(); //browser instance is opened
+context.newPage();
+
+without await browser instance is opened, we must add await in every step as JS is asynchronous
+test('First Playwright test', async ({browser})=>
+{
+	const context = await browser.newContext();
+	const page = await context.newPage();
+	await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+
+
+});
+
+
+page fixture of playwright
+---------------------------
+test('First Playwright test', async ({page})=>
+{
+	//We can eliminate const context and const page by using page fixture of playwright, it automatically does the work of those two steps
+	await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+
+});
+
+=============================================================================================================
+There are four playwright fixtures. In that we learnt two of them.
+(1) browser (2) page
+
