@@ -1,0 +1,2 @@
+Describe the relationship between Browser, Browser Context, and Page in Playwright's architecture.
+-> To clarify, in Playwright's architecture, the 'Browser' is the actual browser instance. 'Browser Contexts' act like separate, isolated browser sessions within that browser, which is great for isolating tests. Finally, a 'Page' represents an individual tab or page within a Browser Context. This structure really helps in managing tests efficiently. 
