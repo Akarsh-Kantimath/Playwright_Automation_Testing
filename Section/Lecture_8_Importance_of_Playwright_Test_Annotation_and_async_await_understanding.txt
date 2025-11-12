@@ -1,0 +1,37 @@
+Inside a tests folder
+- create a file UIBasicstest.spec.js
+
+
+first we have to import a one of the annotation test from the jars of node_modules @playwright/test
+rom @playwright package
+- const {test} = require('@playwright/test'); - store it in variable const
+
+
+test() annotation takes two arguments
+- first is the test name
+- second argument is a function()
+test ('First Playwright test', function(){
+
+});
+
+
+Javascript is asynchronous - we use await key word for each step asking javascript to go step by step
+When, we add await to each line inside the function(), we must declare that function is async in the test arugument
+test('First Playwright test', async function()
+{
+
+});
+
+
+Anonymous function - function without the name is called anonymous function.
+we can skip using function word instead of it ()=>
+=> fat operator
+In newer version of the JS, ()=> it's auto considered as function()
+
+Now, we can write test as 
+test('First Playwright test', async ()=>
+{
+
+});
+//Thus, it's the outer structure of the test.
+
