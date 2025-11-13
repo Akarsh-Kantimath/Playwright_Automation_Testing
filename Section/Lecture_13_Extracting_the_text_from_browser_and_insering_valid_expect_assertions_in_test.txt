@@ -1,0 +1,13 @@
+
+Write CSS based on any attribute 
+CSS -> [attribute='value']
+
+Write CSS based on any attribute with partial value
+CSS -> [attribute*='value']
+==========================================================
+How to Extract text content of any component?
+console.log(await page.locator(' ').textContent());
+=========================================================
+Assertion of the text 
+const locator = page.locator('.title');
+await expect(locator).toContainText('substring');
