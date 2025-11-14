@@ -1,0 +1,18 @@
+await keyword is only used when you are performing any actions. To store some value in const variable await is not required.
+Ex. const userName = page.locator(' ');
+
+To clear text input from a textfield
+-------------------------------------
+await userName.fill(''); //It clears the already input textfield.
+
+CSS traversing from parent to child
+CSS -> parenttagname >> childtagname
+
+How to work with locators which extract multiple webelements in page
+----------------------------------------------------------------------
+console.log(await page.locator(' ').first().textcontent()); // to get first element
+or 
+console.log(await page.locator(' ').nth(1).textcontent(); // to get nth() element
+or 
+console.log(await page.locator(' ').last().textcontent(); // to get last element
+
