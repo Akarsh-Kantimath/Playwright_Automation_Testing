@@ -2,6 +2,8 @@ There are differnt type of wait mechanism, you can apply through playwright for 
 -----------------------------------------------------------------------------------------------------
 -> All the modern day applications are based on API call, service based architecture with network calls
 
+"It waits for a specified network activity to be done," is correct because await page.waitForLoadState('networkidle'); ensures that the page has finished loading by checking that there are no active network connections for at least 500 milliseconds. This action is crucial for interacting with all elements on the page when they are ready.
+
 method 1: use the method waitForLoadState()
 await page.waitForLoadState('networkidle');
 
