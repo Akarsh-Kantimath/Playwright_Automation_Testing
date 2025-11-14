@@ -1,0 +1,6 @@
+If you want all the text content
+--------------------------------
+const cardTitles = page.locator(' ');
+const allTitles = await cardTitles.allTextContents();
+console.log(allTitles);
+
