@@ -4,3 +4,4 @@ const cardTitles = page.locator(' ');
 const allTitles = await cardTitles.allTextContents();
 console.log(allTitles);
 
+Note: Even if allTitles is an array, it will display all the array elements.
