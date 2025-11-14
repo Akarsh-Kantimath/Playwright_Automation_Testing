@@ -1,0 +1,16 @@
+There are differnt type of wait mechanism, you can apply through playwright for differnt application
+-----------------------------------------------------------------------------------------------------
+-> All the modern day applications are based on API call, service based architecture with network calls
+
+method 1: use the method waitForLoadState()
+await page.waitForLoadState('networkidle');
+
+method 2: use the method waitFor(), either use first() or last()
+await page.locator(' ').first().waitFor();
+await page.locator(' ').last().waitFor();
+
+If there are multiple spec files and you want to run only one file
+-------------------------------------------------------------------
+You must explicitely tell to playwright in the terminal mentioning as
+npx playwright test tests/testFileName.spec.js
+
