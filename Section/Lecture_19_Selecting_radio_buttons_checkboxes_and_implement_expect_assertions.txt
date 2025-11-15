@@ -1,0 +1,17 @@
+Assertion of radio button
+-------------------------
+const radioButton = page.locator(' ');
+await expect(radioButton).last().toBeChecked();
+
+for boolean value 
+console.log(await radioButton.last().isChecked());
+
+If you want to uncheck radio button
+-----------------------------------
+await radioButton.uncheck();
+
+Boolean value assertions true/false assertion
+----------------------------------------------
+expect (radiobutton.last().isChecked()).toBeFalsy();
+We can also use the method to .toBeTruthy() for true boolean value.
+
