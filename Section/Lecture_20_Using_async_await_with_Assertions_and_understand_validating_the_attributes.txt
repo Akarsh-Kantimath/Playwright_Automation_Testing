@@ -1,0 +1,12 @@
+Assertion of toHaveAttribute(name, value)
+------------------------------------------
+await expect(locator).toHaveAttribute('class', 'blinkingText');
+
+Differnece between both of these assertions
+-------------------------------------------
+const checkBox = page.locator('#terms');
+1. await expect(radioButton).toBeChecked();
+2. expect (await checkBox.isChecked()).toBeFalsy();
+
+In the 1. expect await is outside, while in the 2. await is inside the expect. 
+where ever we are performig the action await is used, in the 2. action is performed inside expect() method.
