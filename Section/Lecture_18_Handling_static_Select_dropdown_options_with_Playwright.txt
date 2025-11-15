@@ -1,0 +1,19 @@
+There are two types of dropdown.
+1. Static dropdown, where options will be already there, which will have tagname as select
+const dropdown = page.locator('select.form-control');
+await dropdown.selectOption('dropdownOneOfOption');
+
+
+
+
+
+
+In order to pause the test,
+await page.pause() is used - it will open playwright inspector
+
+Web based popup
+---------------
+There's also Java based popup
+--------------------------------
+for web based popup, locators are available - We can handle like any other locator
+
