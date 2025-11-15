@@ -1,0 +1,42 @@
+test('Child Windows handling', async({browser})=>{
+	const context = await browser.newCOntext();
+	const page = await context.newPage();
+
+	//Whenever we want to switch to new tab
+	const page2 = context.waitForEvent('page');//listen for any new page
+	//There are three states of promise. -Pending, -Rejected, -Fulfilled
+	documentLink.click();
+
+	There are two case, 
+	1. if we add await to content.waitForEvent('page') it waits for new page after that we have documentlink.click(); So, we can'tput await 
+	2. after documentlink.click(); if we write the step context.waitForEvent('page') - Context of the page already changed as waitForEvent('page') - listens for new page.
+
+	so, we must execute both the steps simultaneously, for that we use
+	
+==================================================================================
+	//Multiple Asynchrous steps are handled through Promise.all   
+	Const [newPage, newPage2] = await Promise.all ([  
+	//It captures array to prmises, till the time writen all under statements are give the promise as a successful one
+	//[newPage] is declared in the array format - mutiple child windows can be opened 
+
+	context.waitForEvent('page'),
+	documentLink.click(),
+
+	]);
+	
+	const text = await newPage.locator(' ').textContent();
+	console.log(text);
+
+});
+
+====================================================================================
+split the string
+----------------
+const arrayText = text.split('@');
+const domain = arrayText[1].split(' ')[0]
+console.log(domain);
+===============================================================================
+to go back to parent tab
+-----------------------
+await page.locator(' ').fill(domain);
+
