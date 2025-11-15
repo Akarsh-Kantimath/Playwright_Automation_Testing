@@ -1,0 +1,4 @@
+Difference between textContent() and inputValue()
+--------------------------------------------------
+textContent() - is useful to to get the text from the DOM which is default present in the HTML when the page is developed
+inputValue() - this is used when user input value into textfield and now want to print through console.log
