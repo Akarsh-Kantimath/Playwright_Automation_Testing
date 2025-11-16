@@ -1,0 +1,6 @@
+Command to open debug mode
+npx playwright test tests/UIcomponent.spec.js --debug
+it opens up Playwright Inspector window we can go step by step to debug each step
+
+- In the Playwright Inspector we can use Explore button to get the CSS of any component.
+and also Explore textfield can also be used to validate the CSS written by you.
