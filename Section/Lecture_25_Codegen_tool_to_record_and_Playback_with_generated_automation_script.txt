@@ -1,0 +1,3 @@
+npx playwright codegen https://google.com
+
+to generate code by codegen one must use above command with url to which you want reach and continue with the actions you want to generate.
