@@ -1,0 +1,39 @@
+Detailed view of test Traces, HTML reports, logs & Screenshots for test results
+-------------------------------------------------------------------------------
+in the playwright.config.js file
+under use : { 		//add screenshot and trace for logs register with screenshots
+	browserName : 'chromium',
+	headless : false,
+	screenshot : 'on',
+	trace : 'on'
+
+	}
+
+for reporter 
+	reporter: 'html' 
+
+============================================================================================
+On running all the tests through 
+npx playwright test
+
+In the project folders are created
+- Playwright-report >> index.html right click choose copy path to see the html report of tests
+- test-results 
+============================================================================================
+
+How to see the traces
+----------------------
+for passed or failed tests
+Inside the test-results folders generated
+for each and every test detailed view trace.zip file is present.
+To open trace.zip file go to trace.playwright.dev URL and provide the select file through File Manager
+
+=> As for each and every test trace.zip file will be generated
+=> If you want to have trace.zip file to be displayed for only failed tests then,
+in the playwright.config.js file
+under use : {
+	trace: 'ratain-on-failure' // off, on - change to it to save the memory
+
+
+
+	}
