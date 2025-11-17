@@ -1,0 +1,45 @@
+https://rahulshettyacademy.com/client/#/auth/login
+=========================================================
+Using a loop to iterate to the product
+chaining of locator
+finding a locator based on the text
+-----------------------------------------
+const productName = 'Zara Coat'
+const products = page.locator(' ');
+const count = await products.count();
+
+for(let i = 0; i < count; ++i)
+{
+	if(await products.nth(i).locator('b').textContent() === productName){
+	// add to cart 
+	await products.nth(i).locator("text=___").click(); //based on the text you can find the locator in playwright
+	break;
+	}
+}
+==============================================================================
+
+There are two ways to find locator based on text
+1. page.locator('text= ---')
+2. page.locator('h3: has-text('----')) //It's based on the pseudo-class that can be used inside a css selector
+h3 is a tagname, based upon it find the text content
+
+const bool =await page.locator('h3:has-text('---')).isVisible();
+expect(bool).toBeTruthy();
+============================================================================
+If there is auto suggestion dropdown option
+-------------------------------------------
+await page.locator(' ').pressSequentially(' ') 
+//pressSequentially() helps to input the letter one by one as how the user types,
+
+=====================================================================
+
+if(text.trim() === 'India) //trim() removes the space 
+{
+	break;
+	}
+----------------
+if(text.inculdes('India')){ //Partial text check
+	break;
+	}
+
+======================================================================
