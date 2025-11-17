@@ -20,7 +20,12 @@ Write CSS with traversing from Parent to Child
 css -> parenttagname >> childtagname
 
 If needs to write the locator based on text
-text = ' ' 
+text = ' '
+There are two ways to find locator based on text
+1. page.locator('text= ---')
+2. page.locator('h3: has-text('----')) //It's based on the pseudo-class that can be used inside a css selector
+h3 is a tagname, based upon it find the text content
+
 
 =================================================================================================
 await page.locator('#username').fill('Learning');
