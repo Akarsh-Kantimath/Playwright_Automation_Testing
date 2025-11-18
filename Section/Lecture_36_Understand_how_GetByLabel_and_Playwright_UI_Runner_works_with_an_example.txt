@@ -1,0 +1,23 @@
+rahulshettyacademy.com/angularpractice
+
+Identifying the locator based on Playwright specific methods of identification
+------------------------------------------------------------------------------
+getByLabel()
+getByRole()
+getByPlaceHolder()
+
+
+checkbox and radio button - getByLabel()
+-----------------------------------------
+If any text is written inside the label tagname, we can use getByLabel('label text') you can click the radio or checkbox 
+Ex: await page.getByLabel('checkbox text').click();
+instead of click() you can also use check() 
+
+dropdown - getByLabel() - if the dropdown options are with select tagname
+---------------------------------------------------------------------------
+await page.getByLabel('dropdown text').selectOption('male');
+
+================================================================================
+Playwright UI interface - UI test runner
+----------------------------------------
+npx playwright test --ui
