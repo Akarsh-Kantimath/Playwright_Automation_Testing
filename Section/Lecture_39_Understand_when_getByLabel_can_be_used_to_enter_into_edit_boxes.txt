@@ -1,0 +1,23 @@
+getByLabel()
+============
+works in the case
+-----------------
+1. inside a label tag <input > is wrapped
+Ex.
+<label>
+Password
+<input type = "Password" />
+</label>
+
+2. even if input tag is not wrapped inside lable tag
+if there's a connection between for and id attribute value to be same, then getByLabel() works.
+Ex: Here for="exampleInputPassword1" value is same as id value of input tag, connection is made.
+<label for="exampleInputPassword1" xpath="1">Password</label>
+<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password" xpath="1">
+
+it will not in the case of
+---------------------------
+if for and id value of attributes are different.
+Ex:
+<label _ngcontent-tjh-c31="" for="password">Password</label>
+<input _ngcontent-tjh-c31="" type="password" formcontrolname="userPassword" id="userPassword" placeholder="enter your passsword" class="form-control ng-pristine ng-invalid ng-touched">
