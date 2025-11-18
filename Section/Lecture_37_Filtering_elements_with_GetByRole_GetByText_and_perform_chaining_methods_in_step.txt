@@ -1,0 +1,19 @@
+getByPlaceholder() - if the locator has attribute placeholder, we can identify the locator based on placeholder
+----------------------------------------------------------------------------------------Ex. await page.getByPlaceholder('placeholder value').fill(' ')
+Note: if you click on the element text name, if it highlights then getByLabel() works
+
+getByRole()
+------------
+await page.getByRole('Button',{name:'Submit'}).click();
+
+getByText()
+-----------
+await page.getByText('---').isVisible();
+
+tagname a - anker, href - hyper link
+await page.getByRole('link',{name:'Shop'}).click();
+
+Locator identifying - perform chaining methods
+==============================================
+//if a locator returned us list of elements, we can use the filter()
+Ex. await page.locator(' multiple locators returned ').filter({hasText: 'Nokia Edge'}).getByRole('Button').click();
