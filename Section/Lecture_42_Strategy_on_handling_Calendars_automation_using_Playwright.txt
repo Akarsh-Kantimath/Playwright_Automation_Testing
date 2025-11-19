@@ -1,0 +1,28 @@
+https://rahulshettyacademy.com/seleniumPractise/#/offers
+-----------------------------------------------------------
+test ('calender validation', async ('test')=>{
+	const date = '5';
+	const monthNumber = '4';
+	const year = '2027';
+
+	await page.getByText(year).click();
+	await page.locator(' ').nth(Number(monthNumber) -1).click(); 
+	//to convert any string to number string variable is wrapped in Number(monthNumber)
+	//xpath - //tagname[text()="abc"]
+	await page.locator('//abbr[text()='"+date+"']').click();
+	//date not to be hard coded - so, we are using the dynamic one in xpath
+
+
+
+});
+
+================================================================
+const expectedList = [monthNumber, date, year]
+
+for(let i = 0; i < expectedList.length;i++){
+	
+	const value = await inputs.nth(i).inputValue();
+	expect(value).toEqual(expectedList[i]);
+
+}
+================================================================
