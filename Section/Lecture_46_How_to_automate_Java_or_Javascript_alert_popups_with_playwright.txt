@@ -1,0 +1,14 @@
+Handling Java based popup/dialog which can't be inspected through locators
+---------------------------------------------------------------------------
+These are also called Modal popup
+---------------------------------
+
+- There is method is playwright with .on() it's listener through-out the script, waits a popup to display at any given time of event.
+- It's without the await keyword
+
+page.on('dialog', dialog => dialog.accept()); //.accept() on open of popup clicks on ok
+page.on('dialog', dialog => dialog.dismiss()); //it reject the popup 
+
+How to handle Mouse Hover action
+---------------------------------
+await page.locator('___').hover() //hover() on the element and opens the menu options then to select the options to choose from hover dropdown.
