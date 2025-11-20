@@ -3,3 +3,5 @@ How to integrate API testing into WEB CASES
 - integrating API to web automation -> smarter way to testing.
 
 Injecting token into Application tab - to skip the login of application everytime if we have multiple tests.
+
+- API tests doesn't have problem of flickering of web pages
