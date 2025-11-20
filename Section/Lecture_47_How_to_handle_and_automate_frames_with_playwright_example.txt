@@ -1,0 +1,15 @@
+How to handle frames component with playwright
+------------------------------------------------
+tagname is iframe
+
+To switch to frame
+const framePage = page.frameLocator('____'); //.frameLocator locates the frame.
+
+How identify locator with a visible mode
+-----------------------------------------
+await framePage.locator('css_locator:visible').click();
+
+Spit the string by space and grab the index value [2] element
+--------------------------------------------------------------
+console.log(textCompleteString.spit(' ')[2]);
+
