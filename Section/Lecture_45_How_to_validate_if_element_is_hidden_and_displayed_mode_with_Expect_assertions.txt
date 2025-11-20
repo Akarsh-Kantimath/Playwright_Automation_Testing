@@ -1,0 +1,14 @@
+MoreValidations.spec.js
+===================================================================
+How to come back to go forward to different URL in the browser ?
+----------------------------------------------------------------
+await page.goto('https://___');
+await page.goto('https://URL2');
+await page.goBack();
+await page.goForward();
+
+Check if the element is visble or hidden state
+-----------------------------------------------
+await expect(page.locator('___')).toBeVisible();
+await expect(page.locator('___')).toBeHidden();
+
