@@ -1,0 +1,33 @@
+const {test, expect, request} = require('@playwright/test')
+const loginPayload = {userEmail: "tester_akarsh@gmail.com", userPassword: "Abcd1234#"}
+let token; //created a token variable as a global
+
+test.beforeAll(async()=>{
+    const apiContext = await request.newContext();
+    const loginResponse = await apiContext.post('https://rahulshettyacademy.com/api/ecom/auth/login',
+        {
+            data: loginPayload
+        }
+    )
+    expect(loginResponse.ok()).toBeTruthy();
+    const loginResponseJson = await loginResponse.json();
+    token = loginResponseJson.token;
+
+
+})
+
+=============================================
+//in the e2e test we must insert the token, we have to execute the JS expression
+
+test('e2e test', async({page})=>{
+	//to insert the token through JS expression in playwright we gone use the .addInitScript()
+
+//addInitScript() takes two parameters, 1st function 2nd parameters.
+
+	await page.addInitScript(value =>{
+		window.localStorage.setItem('token', value);
+		},token) ;
+
+
+
+})
