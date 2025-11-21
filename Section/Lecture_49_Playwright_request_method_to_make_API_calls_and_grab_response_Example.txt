@@ -33,7 +33,7 @@ test.beforeAll(async()=>{
 	expect(loginResponse.ok()).toBeTruthy();
 
 //We must capture the json response body
-	const loginResponseJson = logiResponse.json();
+	const loginResponseJson = await logiResponse.json();
 
 //Now, that we have loginResponseJson have JSON, we are trying to extract token out of it.
 //It contains token, userId and message: 
