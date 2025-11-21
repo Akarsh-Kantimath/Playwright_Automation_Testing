@@ -1,0 +1,43 @@
+WebAPIPart1.spec.js
+--------------------
+
+Test annotation
+---------------
+test.beforeAll() - before executing the anything in the script .beforeAll() annotation executes once
+test.beforeEach() - this annotation executes before each and every test
+
+
+const {test, expect, request} = require('@playwright/test');
+//request library is used to expose the API to be used in Web automation testing
+const loginPayLoad = {userEmail:'______', userPassword : '____'}
+//We are creating payload as a variable. and userEmail variables can be without quotes ' '
+
+
+
+test.beforeAll(async()=>{
+	const apiContext = await request.newContext();
+// inside .newContext() you are provide any of the information, is no information is provided it becomes empty context.
+//Now, we need to make the API call for that we gone use the apiContext variable
+//we are making post() call
+
+//All the API details are stored in apiContest with post() - Request URL, Payload, Headers and other info of API and reaponse of it stored in variable LoginResponse.
+
+	const loginResponse = await apiContest.post('https://________', 
+		{
+			data: loginPayLoad
+		})
+
+
+
+//Now, we are asserting API response code
+	expect(loginResponse.ok()).toBeTruthy();
+
+//We must capture the json response body
+	const loginResponseJson = logiResponse.json();
+
+//Now, that we have loginResponseJson have JSON, we are trying to extract token out of it.
+//It contains token, userId and message: 
+
+const token = loginResponseJson.token;
+
+});
