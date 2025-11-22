@@ -1,0 +1,45 @@
+
+
+//object is collection of properties
+
+let person = { //Here we declared object with a name person
+        firstName: 'Tim', //Object properites are declared in Key : value format
+        lastName: 'Joe'
+
+
+}
+console.log(person.lastName) //It's in a format of object.property - dot notation
+
+//We can access the Object properties through array like notation
+//You must write them in ' ' to identify itself as a String
+console.log(person['lastName'])
+
+==============================================
+If you want to update the property value in run-time. We can update as
+person.firstName = 'Tim Dane'
+console.log(person.firstName) //Tim Dane
+
+===============================================
+if you want add a new property in run-time
+person.gender = 'male'
+
+console.log(person) //{firstName: 'Tim Dane', lastName: 'Joe', gender: 'male'}
+
+=================================================
+if you want to delete a propery
+
+delete person.gender
+console.log(person) //{firstName: 'Tim Dane', lastname: 'joe'}
+==================================================
+We can check property exist in object or not
+
+console.log('gender' in person);
+==================================================
+If you want print all the property of object
+
+// Interview question - Print all the values of the JavaScript Object
+//By using enhanced for loop
+for (let key in person){
+        console.log(person[key]);
+}
+
