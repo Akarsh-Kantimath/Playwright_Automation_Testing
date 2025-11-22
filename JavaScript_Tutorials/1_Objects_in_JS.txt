@@ -43,3 +43,21 @@ for (let key in person){
         console.log(person[key]);
 }
 
+=====================================================
+//Inside the object, we can add methods as well.
+
+let person = { //Here we declared object with a name person
+        firstName: 'Tim', //Object properites are declared in Key : value format
+        lastName: 'Joe',
+	age: 24,
+	fullName: function(){ 
+	//We can function() as a property key value, here we have declared fullName with anonymous function
+	//To access own key property ex: firstName, lastName - we are using this key to point to current object
+	console.log(this.firstName + this.lastName);
+
+
+}}
+
+//If we are calling function property inside the object, unlike other property key value can't be fetched by dot notation ex: person.firstName, function must be called with person.fullName()
+
+console.log(person.fullName());
