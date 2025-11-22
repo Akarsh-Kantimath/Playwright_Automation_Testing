@@ -1,0 +1,27 @@
+//Create order API
+const orderPayload = {_________} //global orderPayload
+let orderId;
+
+
+
+//Order API
+
+const orerResponse = await apiCntext.post('https://______',
+	{
+		data : orderPayload,
+		headers : {
+				'Authorization' : token,
+				'Content-Type' : 'application/json'
+				},
+
+
+const orderResponseJson = await orderResponse.json();
+console.log(orderResponseJson);
+orderId = orderResponseJson.orders[0];
+
+================================================================
+Difference in the const and let keyword
+
+When you decalre with const variable, value of it should also be declared ot intialised.If value is not intialised, you can use the let key.
+
+
