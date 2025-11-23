@@ -1,0 +1,17 @@
+when we have API and Web UI automation together, on debug mode
+--------------------------------------------------------------
+Playwright Inspector skips the API part, it starts to show steps from UI automation, skips the API steps
+
+How to debug the API call 
+-------------------------
+
+In package.json file add the scripts section
+
+"main": "index.js",
+"scripts":{
+	"test" : "npx playwright test tests/WebAPIPart1.spec.js"
+	//To the script add the red dot on the left of code number, so, that debug starts from the given line.
+},
+
+
+to start API debug, above the scripts: { } debug button will be displayed.
