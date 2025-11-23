@@ -1,0 +1,42 @@
+Other way of API and Web test cases intergration
+-------------------------------------------------
+WebAPIPart2.spec.js
+
+1. we will login to application for the first time through UI
+2. In playwright there's Storage state concept where is store the UI login json local storage, session cookies and many other
+3. Next time while login for differnt tets it will inject previous login storage state, so, we need not repetatively login everytime.
+
+
+//creating a global variable webContext to access storageState everywhere in the script
+let webContext;
+
+
+test.beforeAll(async({browser})=>{
+	const context = await browser.newContext();
+	const page = await context.newPage();
+	await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+    	await page.locator('#userEmail').fill(email);
+    	await page.locator('#userPassword').fill('Abcd1234#');
+    	await page.locator('#login').click();
+    	await products.last().waitFor();
+	
+
+	//At context level we are collecting the cookies, local storage in the Json format
+
+	await context.storageState({path: 'state.json'});
+	//on running the script in the visual studio code left nav bar state.json file is created.
+
+	//Now, we have to invoke a browser by injecting state.json file
+
+
+	webContext = await browser.newContext({storageState:'state.json'});
+
+})
+
+
+test('E2E test', async() => { //We are removing the {page} fixture as the page is created dynamically with webContext()
+	
+	//Now, this webContext have the knowledge of previous UI login to application
+	const page = await webContext.newPage();
+
+}
