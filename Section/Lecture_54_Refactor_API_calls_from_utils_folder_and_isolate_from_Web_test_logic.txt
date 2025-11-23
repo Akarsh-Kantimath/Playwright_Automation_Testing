@@ -1,0 +1,15 @@
+All API and web utilities are pushed through utils folder
+---------------------------------------------------------
+1. Under tests folder, create a folder utils
+2. unde utils folder create APIUtils.js file
+
+
+
+refactor spec files
+---------------------
+BeforeRefactorOfAPI_AddingTokenToLocalStorage.spec.js
+BeforeRefactorOfAPI_CreateOrderAPI_Integration.spec.js
+
+Mentor Rahul followed steps to refactor of spec file
+WebAPIPart1.spec.js
+Utils folder > APIUtils.js
