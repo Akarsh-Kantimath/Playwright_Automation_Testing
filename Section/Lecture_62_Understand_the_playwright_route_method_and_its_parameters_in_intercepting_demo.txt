@@ -1,0 +1,51 @@
+Intercepting the network calls or Mocking the response
+-------------------------------------------------------
+NetworkTest.spec.js
+
+const fakePayLoadOrders = {data: [], message: 'No Orders'};
+
+
+To mock a order call
+-------------------
+await page.goto('__');
+
+//Mocking the response
+await page.route('https:// ___endpoint to request', async route => {
+
+//Here we are intercepting response 
+1. API will give back the response
+2. That reponse we will send it the browser
+3. using that response browser will render the data in the front end
+
+//Here with above step 2, we are hijack the API response and send a fake response through Playwright and render the data in the front end.
+
+//We don't have the control over sever response, but with the browser using Playwright we can send the fake response.
+
+const respone = await page.request.fetch(route.request());
+let body = JSON.stringify(fakePayLoadOrders);
+//fakePayLoadOrders is in JavaScript object notation, to convert it to JSON format we are using JSON.stringify() method.
+
+route.fulfill({   
+
+//We are saving in the variable body because fulfill() expect to see a body variable. 
+ 	response,
+	body,
+//through fulfill() if we don't send the response and body by default it considers request reponse what it got, we are over-riding it. 
+
+});
+
+//before you do the click a button, above fake response must be passed
+await page.locator('order button').click();
+
+await page.waitForResponse('https:// __endpoint of request');
+//Here, we are using waitForResponse asking the request to wait for response with fake payload
+
+console.log(await page.locator('___').textContent());
+
+})
+
+
+=======================================================
+await page.route('https://rahulshettyacademy.com/api/ecom/user/get-cart-count/691775115008f6a9091f8bab');
+
+in the request url /691775115008f6a9091f8bab can be replaced with /* to make as a generic request to have the request to work for multiple accounts instead of not just one account
