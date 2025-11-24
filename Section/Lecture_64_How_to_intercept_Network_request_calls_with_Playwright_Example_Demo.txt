@@ -1,0 +1,24 @@
+
+
+NetworkTest2.spec.js
+---------------------
+Before clicking view order button, in the URL we are passing the orderId of different account. To see the request to receive 404 error or unauthorised access.
+
+await page.route('https://___',route => route.continue({ route => route.continue({
+
+	//route => route.continue is to modify the request body or URL
+	//What are you intercepting or What are you changing
+	//route => route.continue({url: ' '})
+	//continue() is used to intercept request call
+	//If want to intercept heders and url
+	//route = route.continue({headers, url: ' '})
+	// more info google it playwright route method
+
+	url: 'https://______idIsofDifferntAccount'});
+
+	await page.locator('___').click();
+	await page.pause();
+
+
+
+})
