@@ -1,0 +1,29 @@
+When response doesn't reach the browser, abort the network call with playwright
+-------------------------------------------------------------------------
+Case: Server is down
+
+in th network .css request is for the forntend design, if you block it your page loads bit faster
+
+test(' ', async({browser})=> {
+	const context = await browser.newContext();
+	const page = await context.newPage();
+	
+	// **/* refers to URL anything before / and after /
+	// To block .css request while loading a page
+
+	page.route('**/*.css', route => route.abort());
+
+	//block the images while loading the page
+	page.route('**/*.{jpg,png,jpeg}, route => rote.abort());
+
+
+})
+
+//Playwright records each and every request and their response call, You can print it in the output.
+
+//to print all the requests
+page.on('request', request => console.log(request.url()));
+
+any request call made a response, below page.on will print the response
+page.on('response', response => console.log(response.url(), response.status());
+await page.goto('___');
