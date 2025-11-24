@@ -6,7 +6,9 @@ const fakePayLoadOrders = {data: [], message: 'No Orders'};
 
 
 To mock a order call
--------------------
+--------------------
+//JSON fake reposnse ending is all written inside test notation
+
 await page.goto('__');
 
 //Mocking the response
@@ -34,6 +36,9 @@ route.fulfill({
 
 });
 
+====================================================
+
+// Continuing with the Order click button action
 //before you do the click a button, above fake response must be passed
 await page.locator('order button').click();
 
