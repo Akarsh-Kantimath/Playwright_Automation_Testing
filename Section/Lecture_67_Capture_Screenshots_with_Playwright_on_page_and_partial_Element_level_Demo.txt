@@ -1,0 +1,7 @@
+In playwright taking screenshot of whole page
+----------------------------------------------
+await page.screenshot({path: 'screenshot.png'}); //page.screenshot() we are asking to take screenshot on page level
+
+Taking screenshot of an element
+----------------------------------
+await page.locator(' ').screenshot({path : 'partialScreenshot.png'});
