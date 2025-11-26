@@ -1,0 +1,82 @@
+const ExcelJs = require('exceljs'); //It's importing of excelJS node module
+
+
+
+How do we configure the ExcelJS
+--------------------------------
+It supports .xlsx and json files
+
+Excel .xlsx files are called workbooks
+
+//Creating a object of class
+const workbook = new ExcelJs.Workbook();
+
+//File path
+workbook.xlsx.readFile(' ___provide the excel file path___');
+
+
+//Once we open the excel, we have to mention which sheet we are looking
+const worksheet = workbook.getWorksheet('Sheet1');
+worksheet.eachRow((row, rowNumber)=>{ //It traverse through each row
+	row.eachCell((cell, colNumber)=>{ //It traverse through each column
+		console.log(cell.value);
+
+
+
+	})
+
+
+})
+
+-------------------------------------------------------------
+As JavaScript is asynchronous, we can handle it in two ways.
+
+1. using .then() continued with .readFile() wrapping the row and column to get cell value. Upon mentioning the path, it waits for the promise.
+
+
+const workbook = new ExcelJs.Workbook();
+
+//If we didn't write then(function(){}) as JS is asynchronous before even looking for file it jumps to worksheet 
+
+workbook.xlsx.readFile(' ___provide the excel file path___').then(function() {
+
+//Once we open the excel, we have to mention which sheet we are looking
+const worksheet = workbook.getWorksheet('Sheet1');
+worksheet.eachRow((row, rowNumber)=>{
+	row.eachCell((cell, colNumber)=>{
+		console.log(cell.value);
+
+
+
+	})
+
+
+})
+
+}
+
+---------------------------------------------------------------
+2. second way is by using async and await keywords
+
+
+const workbook = new ExcelJs.Workbook();
+
+async function excelTest(){
+await workbook.xlsx.readFile(' ___provide the excel file path___');
+
+
+//Once we open the excel, we have to mention which sheet we are looking
+const worksheet = workbook.getWorksheet('Sheet1');
+worksheet.eachRow((row, rowNumber)=>{
+	row.eachCell((cell, colNumber)=>{
+		console.log(cell.value);
+
+
+
+	})
+
+
+})
+}
+
+excelTest(); //on execution of the method, it looks for method and start the execution.
