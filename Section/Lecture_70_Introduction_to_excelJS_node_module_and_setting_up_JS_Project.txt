@@ -1,0 +1,31 @@
+How to read, write back or modify the excel data using JavaScript
+-----------------------------------------------------------------
+
+https://rahulshettyacademy.com/upload-download-test/
+download the file excelDownloadTest.xlsx
+
+In order to read, write and modify the excel using Javascript
+node module - excel JS which will help us to read, manipulate and write into excel and json files.
+https://www.npmjs.com/package/exceljs
+
+1. create a node project
+2. go to gitBash and create a folder mkdir ExcelJSUtil
+3. cd ExcelJSUtil
+4. npm init 
+5. hit Enter
+6. npm install exceljs -> It will download all the Plugins related to excelJS
+7. now the node_modules folder is created.
+8. Instead of step 6 command if we use
+npm install exceljs --savedev -> entry of excelJS pulgin is recorded into package.json file
+//If the entry of dependencies present in package.json
+//Once we send zip.file of package json user can install all dependencies of project by command -> npm install -> users need not look for excelJS 
+plugin
+
+"dependencies" {
+	"exceljs" : "4.4.0"
+} 
+
+9. This is how you create simple node JS project with dependencies
+10. create a new file excelDemo.js
+
+
