@@ -1,0 +1,7 @@
+What is Visual testing ?
+----------------------
+In playwright, you can add screenshot and ask it to compare it with the previously taken screenshot. So, that alignment and UI test can be done.
+
+expect (await page.screehshot()).toMatchSnapshot('PaysetLogin.png);
+//Here we are asking to match the expected screenshot with PaysetLogin.png file
+//For the first run it will fail, as we don't have the PaysetLogin.png file but for the second run it compares with already available screenshot file.
