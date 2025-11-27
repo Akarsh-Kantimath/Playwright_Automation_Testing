@@ -1,0 +1,54 @@
+how to get the row and column number of any given cell value?
+
+const ExcelJs = require ('exceljs')
+
+async function excelTest() {
+	const workbook = new ExcelJs.Workbook();
+    await workbook.xlsx.readFile('C:/Users/Akarsh Kantimath/Downloads/excelDownloadTest.xlsx');
+    const worksheet = workbook.getWorksheet('Sheet1');
+    worksheet.eachRow((row, rowNumber) => {
+        row.eachCell((cell, colNumber) => {
+            if (cell.value === 'Apple'){
+		console.log(rowNumber);
+		console.log(colNumber);
+	    }
+        })
+    })
+
+}
+
+==========================================================
+How to rewrite or update any cell value ?
+
+const ExcelJs = require('exceljs');
+
+async function excelTest() {
+	
+	let output = {
+		row: -1, column: -1
+	};
+
+//let output = { row: -1, column: -1 } declares a variable named output and assigns it an object with two properties: row and column.
+//The values -1 usually mean “not found”, “no valid index”, or “not selected yet” when working with rows and columns (for example, in a grid, table, or 2D array).
+//Later in code, once a valid row and column are identified, these might be updated to 0, 1, 2, etc., instead of -1.
+
+	const workbook = new ExcelJs.Workbook();
+    await workbook.xlsx.readFile('C:/Users/Akarsh Kantimath/Downloads/excelDownloadTest.xlsx');
+    const worksheet = workbook.getWorksheet('Sheet1');
+    worksheet.eachRow((row, rowNumber) => {
+        row.eachCell((cell, colNumber) => {
+            if (cell.value === 'Summer') {
+                output.row = rowNumber;
+                output.column = colNumber;
+            }
+        })
+    })
+
+
+const cell = worksheet.getCell(output.row, output.column);
+cell.value = 'Republic';
+//Save the .xlsx file by .writeFile() method
+await workbook.xlsx.writeFile('C:/Users/Akarsh Kantimath/Downloads/excelDownloadTest.xlsx');
+
+}
+excelTest();
