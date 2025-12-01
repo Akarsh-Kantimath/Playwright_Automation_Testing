@@ -34,7 +34,7 @@ const Car = require('./file1.js')
 
 class Aeroplane extends Car {
 
-	//Rule of inhertance : If a parent have any constructor, child class should alsohave the same kind of constructor.
+	//Rule of inhertance : If a parent have any constructor, child class should also have the same kind of constructor.
 
 	constructor(brand,origin_country){
 		// Rule : you have call your parent class constructor into child class constructor as a first step
@@ -55,7 +55,7 @@ class Aeroplane extends Car {
 }
 
 //We are not creating details() method once again in child class Aeroplane, very reason of inherit is to avoid duplication of the code
---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
 //Basically to execute parent class method, we need those aruguments brand, origin_country in the parent class.
 1. from the child class through object, we send the arugments
 2. constructor within child class arguments are passed
@@ -66,4 +66,4 @@ class Aeroplane extends Car {
 
 let aero = new Aeroplane('Lockheed Martin','USA');
 aero.details() //Needn't write in console.log as in the parent class console.log is already present under details()
-console.log(aero.colour);
+console.log(aero.colour); //silver
