@@ -1,0 +1,5 @@
+checkout the file
+
+17_E2E_EcommerceTestPO.spec.js
+and pageobjects folder for each page locator defined and their methods called
+
