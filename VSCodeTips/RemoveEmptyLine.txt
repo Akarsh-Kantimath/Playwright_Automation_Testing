@@ -1,0 +1,5 @@
+VS Code’s built‑in formatter does not have a “delete all empty lines” toggle, but you can clean them up quickly with regex replace.​
+Press Ctrl + H (Find & Replace)
+Turn on regex (the .* button)
+In Find, put: ^\s*$\n
+Leave Replace empty and click Replace All
