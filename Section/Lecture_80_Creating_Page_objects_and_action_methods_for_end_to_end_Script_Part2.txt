@@ -1,0 +1,11 @@
+Page Object Manager
+-------------------
+for each and every page, we are creating a each page objects. Now, the plan is to put all the objects in one single file and call the file. That's were page object manager file comes into picture.
+
+Duty of page object manager is consolidate and keep all the objects in one file.
+
+In pageobjects folder
+- create POManager.js file
+- It's a library were it stores all the pages.
+
+
