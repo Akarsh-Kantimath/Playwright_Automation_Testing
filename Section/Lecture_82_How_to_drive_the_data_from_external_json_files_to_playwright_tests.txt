@@ -1,0 +1,30 @@
+To drive the data from external json file instead of hardcoding it
+------------------------------------------------------------------
+We can pass the data from any folder, for now we are using utils folder
+
+Inside of it we are creating the placeorderTestData.json file
+
+We are passing the data through Json format
+
+There are 3 datas username, password, productName
+
+placeorderTestData.json file
+{
+     "username" : "tester_akarsh@gmail.com",
+     "password" : "Abcd1234#",
+     "productName" : "ADIDAS ORIGINAL"
+}
+
+==============================================
+to import the json file into .spec.js file
+1. first we must convert json -> to String -> to JS object
+
+const dataset = JSON.parse(JSON.stringify(require('../___/.json')))
+
+now, that JSON file variables are conveted into object.
+We can use the object.property format where ever in .spec.js file those variables are present.
+
+
+username -> change it to dataset.username
+
+18_E2E_EcommerceTestPOAndDataFromJsonFile.spec.js
