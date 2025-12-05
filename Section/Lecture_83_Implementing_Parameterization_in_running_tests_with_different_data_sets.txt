@@ -1,0 +1,55 @@
+utils folder > placeorderTestData.json
+
+Here, we have two different data sets
+[
+     {
+          "username": "tester_akarsh@gmail.com",
+          "password": "Abcd1234#",
+          "productName": "iphone 13 pro"
+     },
+     {
+          "username": "tester_akarsh2@gmail.com",
+          "password": "Abcd1234#",
+          "productName": "ZARA COAT 3"
+     }
+]
+
+========================================
+Now, going to E2E test spec file
+
+
+
+const { test, expect } = require('@playwright/test');
+const { POManager } = require('../pageobjects/POManager');
+const dataset = JSON.parse(JSON.stringify(require('../utils/placeorderTestData.json')))
+
+
+//Since we have two different set of testdata, we are passing it through loop
+//We are modifying the test name with `E2E test of product ${data.productName}` to identify the differnt productName
+//Since in the loop const data is declared, we are changing the variable name to data.password, data.productName, data.username through the test
+
+
+
+for (const data of dataset) {
+    test(`E2E test of product ${data.productName}`, async ({ browser }) => {
+
+        const context = await browser.newContext();
+        const page = await context.newPage();
+
+        const poManager = new POManager(page);
+
+        //LoginPage.js
+        const loginPage = poManager.getLoginPage();
+        await loginPage.goTo();
+        await loginPage.validLogin(data.username, data.password);
+
+        //DashboardPage.js
+        const dashboardPage = poManager.getDashBoardPage();
+        await dashboardPage.dashboardPageLoad();
+        await dashboardPage.searchProductAddCart(data.productName);
+        await dashboardPage.navigateToCart();
+
+        //CheckoutPage.js
+        const checkoutPage = poManager.getCheckoutPage();
+        await checkoutPage.checkOutPageLoad();
+        await checkoutPage.productNameAssertionAndCheckout(data.productName);
