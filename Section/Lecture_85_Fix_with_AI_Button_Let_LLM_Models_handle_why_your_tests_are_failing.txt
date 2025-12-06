@@ -1,0 +1,44 @@
+run the tests through playwright UI runner
+npx playwright test --ui
+
+In the UI runner error tab displays any error found executing the test
+On the right their is copy prompt button, upon clicking on it
+
+Playwright provides the prompt of an error, we can use any LLM to ask where exactly is the error in the script and how to fix it ?
+
+Ex. of copy prompt
+
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+19_E2E_EcommerceTestPOAndPassTestDataByExtendingTestAnnotations.spec.js:5 › E2E test of product with test annotation data pass
+
+# Error details
+
+```
+Error: locator.textContent: Test ended.
+Call log:
+  - waiting for locator('.colr-text')
+
+```
+
+# Test source
+
+```ts
+  1  | class ViewOrderDetailsPage {
+  2  |     constructor(page) {
+  3  |         this.page = page;
+  4  |         this.OrderIdFromOrderSummary = page.locator('.colr-text');
+  5  |     }
+  6  |     async orderSummary() {
+> 7  |         return await this.OrderIdFromOrderSummary.textContent();
+     |                                                   ^ Error: locator.textContent: Test ended.
+  8  |     }
+  9  | }
+  10 | module.exports = { ViewOrderDetailsPage }
+```
