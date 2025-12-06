@@ -1,0 +1,58 @@
+How to pass test data as a fixture by extend test annotation behaviour
+----------------------------------------------------------------------
+We can pass the testdata as a fixture - Limitations is to pass only one single set of test data.
+
+We are creating a custom fixture to extend the test data set to pass through test fixture
+
+1. Inside utils folder create test-base.js file
+2. test-base.js
+
+const base = require('@playwright/test');
+
+// Extend base test by providing testDataForOrder option.
+const customtest = base.test.extend({
+  testDataForOrder: {
+    username: 'tester_akarsh@gmail.com',
+    password: 'Abcd1234#',
+    productName: 'iphone 13 pro',
+  },
+});
+
+// Export the extended test so other files can use it.
+module.exports = { test: customtest, expect: base.expect };
+
+3. Now, import the test data file by the folder location
+
+const { test, expect } = require('../utils/test-base');
+const { POManager } = require('../pageobjects/POManager');
+const dataset = JSON.parse(JSON.stringify(require('../utils/placeorderTestData.json')))
+
+//In the fixtures, along with browser pass the testDataForOrder 
+//through out test change the variables names from username, password, productNName to testDataForOrder.username, testDataForOrder.password, testDataForOrder.productName 
+
+    test(`E2E test of product with test annotation data pass`, async ({ browser, testDataForOrder }) => {
+
+        const context = await browser.newContext();
+        const page = await context.newPage();
+
+        const poManager = new POManager(page);
+
+        //LoginPage.js
+        const loginPage = poManager.getLoginPage();
+        await loginPage.goTo();
+        await loginPage.validLogin(testDataForOrder.username, testDataForOrder.password);
+
+        //DashboardPage.js
+        const dashboardPage = poManager.getDashBoardPage();
+        await dashboardPage.dashboardPageLoad();
+        await dashboardPage.searchProductAddCart(testDataForOrder.productName);
+        await dashboardPage.navigateToCart();
+
+        //CheckoutPage.js
+        const checkoutPage = poManager.getCheckoutPage();
+        await checkoutPage.checkOutPageLoad();
+        await checkoutPage.productNameAssertionAndCheckout(testDataForOrder.productName);
+
+        //LandOnCheckoutPage.js
+        const landOnCheckoutPage = poManager.getLandOnCheckoutPage();
+        await landOnCheckoutPage.fillCartDetails(testDataForOrder.username);
