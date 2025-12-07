@@ -1,0 +1,22 @@
+playwright.confog.js file
+
+inside of use: {}
+
+video option and contextOptions
+
+use: {
+        browserName: 'chromium',
+        headless: false,
+        screenshot: 'only-on-failure', //'off', 'on', 'only-on-failure'  //'on' - captures screenshot after each test.
+        trace: 'retain-on-failure', //'on', 'off' , 'retain-on-failure'
+        viewport : {width : 720, height : 720},
+        //...devices['Galaxy Note 3']
+        ignoreHttpsErrors:true, //Your connection is not private wrror page.
+        permissions : ['geolocation'], //allow to know your location popup
+        video : {mode : 'retain-on-failure'}, //'off', 'on', 'retain-on-failure', 'on-first-retry'
+        contextOptions: {
+          recordVideo: {
+            dir: 'test-results',
+          }
+        }
+      }
