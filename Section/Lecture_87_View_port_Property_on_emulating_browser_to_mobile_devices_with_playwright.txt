@@ -1,0 +1,26 @@
+viewport
+
+device selection
+
+Page is diaplyed with SSL cerification error
+Your connection is not private
+
+
+allow to know your location popup handling
+
+------------all the above property are written under playwright.config.js file under use : {}
+
+{
+      name: 'chrome_execution',
+      use: {
+        browserName: 'chromium',
+        headless: false,
+        screenshot: 'on', //'off', 'on', 'only-on-failure'  //'on' - captures screenshot after each test.
+        trace: 'retain-on-failure',
+        //viewport : {width : 720, height : 720},
+        //...devices['Galaxy Note 3']
+        ignoreHttpsErrors:true, //Your connection is not private wrror page.
+        permissions : ['geolocation'], //allow to know your location popup
+
+      }
+    }
