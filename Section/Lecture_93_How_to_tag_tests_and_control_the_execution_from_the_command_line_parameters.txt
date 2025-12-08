@@ -1,0 +1,48 @@
+How to give tagging to a tests and run the tests which are tagged to a specific tag name
+======================================================================== 
+
+We can add tags to the tests, while naming the tests initially add the tags like @API or @smoke or @regression 
+
+Ex: 
+test(('@smoke Element is hidden or visible check'), async ({ browser }) => {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+    // await page.goto('https://google.com');
+    // await page.goBack();
+    // await page.goForward();
+    // await page.goBack();
+    await expect(page.locator('#displayed-text')).toBeVisible();
+    await page.locator('input[value="Hide"]').click();
+    await expect(page.locator('#displayed-text')).toBeHidden();
+
+})
+
+============================================================
+when you want to execute any the test with tag name you can use 
+
+npx playwright test --grep '@smoke'
+
+tests with tagname @smoke will be executed.
+
+Note: to reduce the flaky tests you can change the headless : true in playwright.config.js file
+
+// @ts-check
+const { defineConfig, devices } = require('@playwright/test');
+
+const config = ({
+  testDir : './tests',
+  timeout : 30 * 1000,
+  expect : {
+      timeout : 5 * 1000,
+  },
+  reporter : 'html',
+  use : {
+      browserName: 'chromium',
+      headless: true,
+      screenshot: 'on', //'off', 'on', 'only-on-failure'  //'on' - captures screenshot after each test.
+      trace: 'retain-on-failure' //'on', 'off' , 'retain-on-failure'    
+  },
+});
+
+module.exports = config
