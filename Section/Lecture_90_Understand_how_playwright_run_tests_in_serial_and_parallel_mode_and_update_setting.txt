@@ -1,0 +1,31 @@
+
+Test files will trigger parallel
+Individual tests in the file will run in sequence
+
+In the config.js file we can mention number of worksers for parallel execution in playwright
+
+const config = ({
+  testDir: './tests',
+  retries : 1 , // Maximum time one test can run for
+  workers : 1, //Mentioning number of worker for test execution of files parallel
+  timeout: 30 * 1000,
+  expect: {
+    timeout: 5 * 1000,
+  },
+  reporter: 'html',
+  projects: [
+    {
+      name: 'safari_execution',
+      use: {
+        browserName: 'webkit',
+        headless: false,
+        screenshot: 'on', //'off', 'on', 'only-on-failure'  //'on' - captures screenshot after each test.
+        trace: 'retain-on-failure', //'on', 'off' , 'retain-on-failure'
+        //...devices['iPhone 15']
+      }
+    },
+    {
+      name: 'chrome_execution',
+      use: {
+        browserName: 'chromium',
+        headless: false,
