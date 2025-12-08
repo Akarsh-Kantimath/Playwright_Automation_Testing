@@ -1,0 +1,44 @@
+How to retry the tests when they are failed
+============================================
+Tests might be failed due to flaky testcases or network issues or synchronization issue of waits 
+
+retries is declared in global config variable
+
+const config = ({
+  testDir: './tests',
+  retries : 1 , // Maximum time one test can run for
+  timeout: 30 * 1000,
+  expect: {
+    timeout: 5 * 1000,
+  },
+  reporter: 'html',
+  projects: [
+    {
+      name: 'safari_execution',
+      use: {
+        browserName: 'webkit',
+        headless: false,
+        screenshot: 'on', //'off', 'on', 'only-on-failure'  //'on' - captures screenshot after each test.
+        trace: 'retain-on-failure', //'on', 'off' , 'retain-on-failure'
+        ...devices['iPhone 15']
+      }
+    },
+    {
+      name: 'chrome_execution',
+      use: {
+        browserName: 'chromium',
+        headless: false,
+        screenshot: 'only-on-failure', //'off', 'on',
+
+
+==================================================================
+In the Playwright test report
+status of tests can be seen with
+All
+Passed
+Failed
+Flaky
+Skipped
+
+-> if the test got passed with retry mechanism, passed result will be considered as a part of Flaky. 
+-> We can work on flaky testcases to make them pass with first attempt.
