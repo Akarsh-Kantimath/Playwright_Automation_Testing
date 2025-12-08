@@ -1,0 +1,12 @@
+How to run tests paralley which are present in a same file 
+===========================================================
+
+20_MorevalidationsRunAllTheTestsParalley.spec.js
+
+test.describe.configure({mode:'parallel'});
+// add it above configuration above the test
+
+//if the tests are linked to inter dependent you can run tests in serial mode, 
+Note: when the tests are running in serial mode, if any the test fails inbetween rest other tests written after it will be skipped.
+
+test.describe.configure({mode: 'serial'});
