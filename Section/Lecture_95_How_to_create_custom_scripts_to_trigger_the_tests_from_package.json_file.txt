@@ -1,0 +1,37 @@
+You can trigger parametrized custom scripts based on API, WebTests, Regression (all) or browser specific by mentioning
+=====================================================================
+
+1. Under Scripts name and npx test commands in package.json file
+{
+  "name": "playwright_automation_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "regression": "npx playwright test",
+    "apiTests": "npx playwright test --grep @API",
+    "safariBrowser": "npx playwright test --config playwright.config2.js --project=safari_execution"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akarsh-Kantimath/Playwright_Automation_Testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+
+2. to run the tests use
+
+npm run regression
+or
+npm run apiTests
+or
+npm run safariBrowser
+
+
+==========================================================
+
+Once scripts are prepared it's easy to run the tests with framework by integrating Jenkins
+
+
