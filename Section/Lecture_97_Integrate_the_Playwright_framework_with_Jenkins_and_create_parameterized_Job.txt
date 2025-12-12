@@ -1,0 +1,41 @@
+On opening the Jenkins in the browser URL localhost:8080
+
+1. click on New Item on the left nav bar
+2. Give the Item name and choose the Freestyle project
+3. In the General tab click on Advanced and choose a option use custom workspace as our project is in local machine, not in git. (If it's in git provide git url to interact with Jenkins) 
+4. Provide the path of the project 
+5. Scroll down to Build section and choose based on the OS
+Mac - Execute shell
+Windows - Execute Windows batch command
+
+In the command provide the command used to execute
+npm run regression
+
+and click on Save button
+
+6. click on Build Now in the left nav bar
+
+==================================================
+7. click on the build number, in the left Console output to see the end result of build success or failure
+
+====================================================
+Currently, in the configure we have hardcoded the one command npm run regression
+
+If you want to run differnt types of scripts Ex. regression, apiTests, safariBrowser
+
+1. In General, tick the option This project is parameterized
+2. Then click on the Add Parameter
+3. Choose Choice Parameter
+Name 	Script
+Choices 	regression
+		apiTests
+		safariBrowser
+
+4. In the build Steps : in Execute Windows batch command 
+Command Area
+npm run "%Script%"
+for iOS shell command : npm run "$Script"
+
+5. Click on the Save button
+6. Now, you will see the change in the Build now -> Build with Parameters
+7. now, you can choose the parameter to run the tests - regression, apiTests, safariBrowser
