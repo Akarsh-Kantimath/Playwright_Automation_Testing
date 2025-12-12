@@ -1,0 +1,21 @@
+Jenkins - The leading open source automation server, Jenkins provides hundreds of plugins to support building, deploying and automating any project.
+
+1. Google Jenkins download
+2. Go to their official website
+3. Download Generic Java Package (war)
+4. Go to the work directory path in command prompt
+Note: Jenkins is not any tool, once you give a command Jenkins starts to work in your local server
+5. In command prompt give the command
+java -jar jenkins.war -httpPort=8080
+Here we are asking to open -jar (JAVA ARchive) file to run on the local server 9090
+6. Now in the browser URL type
+localhost:9090
+You will see the message, Please wait while Jenkins is getting ready to work
+7. Initially it asks to setup User name and Password and click on login
+8. You will be landed on home page of the Jenkins
+9. We will create a new Job to run/trigger our automation testcases to have continous integration from this tool.
+
+Now, in the browser URL type
+localhost:8080 
+Input Username and Password
+
