@@ -1,0 +1,15 @@
+JavaScript vs TypeScript
+------------------------
+TypeScript is a superset of JavaScript, so all valid JavaScript code is also valid TypeScript code.
+
+TypeScript syntax extensions primarily focus on adding type annotations and other features that enhance code quality, readability and maintainability.
+
+TypeScript = JS + Additional features
+
+If you want to execute the demo.js file -> node demo.js command is used, while for the demo.ts file to execute
+
+demo.ts -> tsc demo.ts -> demo.js
+
+first tsc typescript complier is run to change the typescript file to javascript file. On convertion to js file node demo.js command is used to execute.
+
+
