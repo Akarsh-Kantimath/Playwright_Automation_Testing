@@ -7,6 +7,11 @@ npm install -D typescript
 
 We want to save the typescript in package.json file so,
 npm install --save-dev typescript
+
+if the above command doesn't work then,
+npm install -g typescript
+in new terminal check for version by tsc -v
+
 ========================================
 Key difference between JavaScript and TypeScript
 1. Static Typing : TypeScript checks typesduring development, catching errors before you run your code. JavaScript is dynamically typed, meaning type errors only surface at runtime.
