@@ -1,0 +1,54 @@
+Installing typescript
+----------------------
+google typescript install
+npmjs.com/package/typescript
+
+npm install -D typescript
+
+We want to save the typescript in package.json file so,
+npm install --save-dev typescript
+========================================
+Key difference between JavaScript and TypeScript
+1. Static Typing : TypeScript checks typesduring development, catching errors before you run your code. JavaScript is dynamically typed, meaning type errors only surface at runtime.
+
+2. Strong Typing : TypeScript enforces strict rules about howyou use types, preventing you from accidentally mixing incompatible types. JavaScript is more lenient.
+
+
+
+
+=========================================
+2 files are created
+demo.js
+demo1.ts
+
+=========================================
+demo.js
+
+let  message = "Hello";
+message = 2;
+let age = 20;
+let numbers = [1, 2, 3];
+
+
+
+=========================================
+demo1.ts
+
+let message1 : string = "Hello";
+message1 = 2; //Line is displayed with error above message1 variable declared with string type and below we are re-assigning with 2 which is of type number not string.
+
+let age : number = 20;
+let isActive : boolean = false;
+
+let number : number[] = [1, 2, 4];
+
+let data : any = "this could be anything"; // if you unsure of any data type decalre the variable with : any it will take care of itself by identifing the data type.
+data = 42 ;
+
+console.log(message1);
+console.log(age);
+
+to run the typescipt execution, as in the run-time their is no environment, so initially while compling we change the file from ts to js by 
+tsc demo1.ts -> it creates demo1.js file
+then run the command node demo1.js then the file is executed.
+
