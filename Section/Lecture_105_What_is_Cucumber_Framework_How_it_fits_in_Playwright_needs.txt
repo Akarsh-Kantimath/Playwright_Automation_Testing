@@ -1,0 +1,47 @@
+google Cucumber JS and Cucumber JS Github
+
+Cucumber comes in many languages, as currently we are dealing with JS language so, Cucumber JS
+
+So, far we have written Playwright tests with Mocha framework.
+
+Cucumber is also a type of framework, If we want to implement with cucumber framework it's JAR files are available.
+ 
+
+Cucumber framework is top over layer with nice plain English it let's everyone to understand the test.
+
+Get Started
+Let's take this example of something to test:
+
+First, write your main code in src/index.js:
+----------------------------------------------
+class Greeter {
+  sayHello() {
+    return 'hello'
+  }
+}
+
+module.exports = {
+  Greeter
+}
+
+Then, write your feature in features/greeting.feature:
+-------------------------------------------------------
+Feature: Greeting
+
+  Scenario: Say hello
+    When the greeter says hello
+    Then I should have heard "hello"
+
+Next, implement your steps in features/support/steps.js:
+---------------------------------------------------------
+const assert = require('assert')
+const { When, Then } = require('@cucumber/cucumber')
+const { Greeter } = require('../../src')
+
+When('the greeter says hello', function () {
+  this.whatIHeard = new Greeter().sayHello()
+});
+
+Then('I should have heard {string}', function (expectedResponse) {
+  assert.equal(this.whatIHeard, expectedResponse)
+});
