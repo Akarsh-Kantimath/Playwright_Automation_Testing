@@ -1,0 +1,11 @@
+var message1 = "Hello";
+message1 = "World";
+console.log(message1);
+var age1 = 29;
+console.log(age1);
+var numbers1 = [7, 9, 11];
+console.log(numbers1);
+var isActive = true;
+console.log(isActive);
+var data = "data can be any";
+console.log(data);

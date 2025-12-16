@@ -1,0 +1,33 @@
+{
+  "name": "playwright_automation_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "regression": "npx playwright test",
+    "apiTests": "npx playwright test --grep @API",
+    "safariBrowser": "npx playwright test --config playwright.config2.js --project=safari_execution"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akarsh-Kantimath/Playwright_Automation_Testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Akarsh-Kantimath/Playwright_Automation_Testing/issues"
+  },
+  "homepage": "https://github.com/Akarsh-Kantimath/Playwright_Automation_Testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}
