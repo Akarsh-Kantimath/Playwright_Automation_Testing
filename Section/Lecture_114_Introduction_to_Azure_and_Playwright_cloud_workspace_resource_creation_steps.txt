@@ -1,0 +1,23 @@
+Introduction to Azure & Playwright cloud workspace resource creation steps
+----------------------------------------------------------------
+
+1. first we need to create a account of Azure
+2. Google Azure devops
+3. click on Get started with Azure
+4. try Azure for free
+5. continue with account sign and credit card account details
+6. 
+
+
+Goal is to deploy the playwright test project to cloud repository and exeute the tests in cloud browsers
+
+Once after providing 
+Resource group
+Resource 
+
+on click of reiew + create, it creates a repository for deployment
+
+for now, we created one account of azure
+We created a resource of type Playwright Workspace
+
+In the next lecture We can see how to connect local framework to Azure
