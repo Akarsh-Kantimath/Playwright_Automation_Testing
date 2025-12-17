@@ -1,5 +1,5 @@
 in the terminal input
-npm install playwright
+npm init playwright
 
 then it asks bunch of questions
 after that skeleton of the playwright project is created
