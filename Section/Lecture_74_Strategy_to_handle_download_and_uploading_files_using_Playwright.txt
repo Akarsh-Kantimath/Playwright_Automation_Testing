@@ -55,7 +55,9 @@ test('Upload download excel valdation', async ({ page }) => {
     //Playwright provided with a method .setInputFiles('provide the path of file locator')
     //While selecting the locator make sure that attribute type="file" is present in HTML, if not Playwright doesn't recognise where to upload the file.
     //If type='file' attribute is missing ask developer to add it.
+
     await page.locator('#fileinput').setInputFiles('C:/Users/Akarsh Kantimath/Downloads/download.xlsx');
-    await page.pause();
+    /*<input type="file"> locator with attribute input must be used for .setInputFiles(), if not error locator.setInputFiles: Error: Node is not an HTMLInputElement is displayed.
+await page.pause();
 
 })
