@@ -12,7 +12,7 @@ const config = ({
   reporter : [['html'],['line'],['allure-playwright']],
   use : {
       browserName: 'chromium',
-      headless: true,
+      headless: false,
       screenshot: 'on', //'off', 'on', 'only-on-failure'  //'on' - captures screenshot after each test.
       trace: 'retain-on-failure' //'on', 'off' , 'retain-on-failure'    
   },
