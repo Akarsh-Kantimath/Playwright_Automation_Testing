@@ -1,0 +1,69 @@
+What is the inheritance ?
+--------------------------
+//Inheritance is the main pillar in object oriented programming.
+//One class can inherit/acquire the properties, methods of another class
+//The class which inherits the properties of other is known as subclass/derived class/child class.
+//The class whose properties are inherited is known as superclass.
+
+how the inheritance works?
+---------------------------
+1. consider a file1.js have a class Car
+
+module.exports = class Car{ //we must export it by module.exports
+    type = 'suv'
+    get colour(){
+        return 'white'
+    }
+    constructor(brand,origin_country){
+        this.brand = brand;
+        this.origin_country = origin_country;
+    }
+    details(){
+        console.log(this.brand+' '+this.origin_country);
+    }
+
+}
+
+
+2. in the file3.js 
+//file1.js is imported through require
+
+const Car = require('./file1.js')
+
+//class Aeroplane wants to inherit the class Car of file1.js - by using extends key, we can inherit it
+
+class Aeroplane extends Car {
+
+	//Rule of inhertance : If a parent have any constructor, child class should also have the same kind of constructor.
+
+	constructor(brand,origin_country){
+		// Rule : you have call your parent class constructor into child class constructor as a first step
+		
+		//call parent class constructor - using super keyword and pass the same arguments into super(brand,origin_country), it's a mandatory step.
+		
+		super(brand,origin_country)
+
+	}
+	
+		//We are over-riding the parent class property of get colour() - if you want to change it from parent class return 'white' to return 'silver' then it's fine, even if don't change still it will be returning 'white'. But any property is over-ridden from parent class then it gives importance to child class property.
+
+	get colour(){
+		return 'silver'
+
+	}
+
+}
+
+//We are not creating details() method once again in child class Aeroplane, very reason of inherit is to avoid duplication of the code
+---------------------------------------------------------------------------------------------------------------------------------------
+//Basically to execute parent class method, we need those aruguments brand, origin_country in the parent class.
+1. from the child class through object, we send the arugments
+2. constructor within child class arguments are passed
+3. from their super keyword envokes the parent class constructor with arguments brand, origin_country
+4. In parent class contructor those arguments are received in this.brand and this.origin_country. Now, parent class have the knowledge to variables.
+5. Methods from parent class are executed as they have arguments value, when from child file any method of parent is called
+
+
+let aero = new Aeroplane('Lockheed Martin','USA');
+aero.details() //Needn't write in console.log as in the parent class console.log is already present under details()
+console.log(aero.colour); //silver
