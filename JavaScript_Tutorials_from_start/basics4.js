@@ -1,0 +1,39 @@
+//Functions - a block of code wrapped them in a module for execution 
+
+function add(a, b) {
+    return a + b
+}
+let sum = add(2, 3);
+console.log(sum);
+
+//Anonymous function - function without the name, it is more of like function expressions
+let sumOfIntegers = function(c,d){
+    return c+ d
+}
+console.log(sumOfIntegers(6,7));
+
+let sumOfNumbers = (c,d) => c + d
+console.log(sumOfNumbers(4,5));
+
+//let var const keyword difference with respect scope 
+
+var greet = "Evening"
+if ( 1 == 1){
+    var greet = "Afternoon" //with var keyword within the block of if, it can be re-initialized. So, scope of it remain accessible to global/functional level
+}
+function toCheckGreet(){
+    var greet = "Morning"
+}
+console.log("greet variable value is " + greet)
+
+//---------------------------------------------------------------------------------------------------------------------
+let greet1 = "Evening"
+if ( 1 == 1){
+    let greet1 = "Afternoon" //with let keyword within the block of if, it can't be re-initialized. So, scope of it remains in global/vlock level
+}
+function toCheckGreet(){
+    let greet1 = "Morning"
+}
+console.log("greet1 variable value is " + greet1)
+
+/* 
