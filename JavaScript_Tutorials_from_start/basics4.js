@@ -36,4 +36,20 @@ function toCheckGreet(){
 }
 console.log("greet1 variable value is " + greet1)
 
-/* 
+/* Final difference between let var const keywords
+
+1. scope
+var - scope of it exist in global/functional level
+let - global/block level
+const - only global level
+
+2. re-decalration of variable
+only with var key re-declaration is possible
+with let key if tried throughs an error
+
+3. re-initilization
+with both let and var keyword - re-initilization of variable is possible.
+
+4. with const keyword re-declare and re-initilize doesn't work.
+
+*/
